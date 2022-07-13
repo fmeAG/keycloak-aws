@@ -1,0 +1,8 @@
+plan
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+export.sh
+assertion
+rsa/
