@@ -94,6 +94,18 @@ KC_HTTPS_CERTIFICATE_KEY_FILE=/tls/privkey.pem
 KC_HTTPS_PORT=443
 KC_HTTP_ENABLED=true
 EOF
+mkdir -p providers
+echo '${JAR}' | base64 -d > providers/prov.jar
 
-docker run --network=kc --ip=172.20.0.3 -d --name keycloak --env-file=envfile -p 443:443 -v "/home/persistent/keycloak/tls:/tls" --hostname="${DOMAIN}" --entrypoint=/bin/bash quay.io/keycloak/keycloak:latest -c '/opt/keycloak/bin/kc.sh start --auto-build'
+docker run --network=kc \
+  --ip=172.20.0.3 -d \
+  --name keycloak \
+  --env-file=envfile \
+  -p 443:443 \
+  -v "/home/persistent/keycloak/tls:/tls" \
+  -v $PWD/providers:/opt/keycloak/providers \
+  --hostname="${DOMAIN}" \
+  --entrypoint=/bin/bash \
+  quay.io/keycloak/keycloak:latest \
+  -c '/opt/keycloak/bin/kc.sh start --auto-build -Dkeycloak.profile=preview'
 popd

@@ -63,6 +63,7 @@ terraform apply plan
 popd
 ```
 ## Access to AWS via OIDC
+(Requires the scripts for SAML (above) to be executed first)
 ```
 source ./export.sh
 ./kcoidc.sh
@@ -72,10 +73,18 @@ terraform init
 terraform plan -out plan
 terraform apply plan
 ./oidc.sh
-popd
 ```
 In this case, you can assume the role straight away without anything assigned to `testuser` in keycloak. Compare this to the SAML case, where we had to run `./kccommands.sh` that creates a role and role mapping **after** running terraform.
 Got you interested? Read the [upcoming blog post](https://content.fme.de/blog) to learn how to properly secure OIDC access to AWS.
+
+## Fortified access to AWS via OIDC
+(Assumes that the scripts from the previous section were executed)
+```
+./oidc_protected.sh
+popd
+```
+In this case, you should be able to access the first but not the second role. This is because `testuser` is in the `aws_access` but not in the `aws_access_exclusive` group (which does not even exist yet).
+Creating the group in the Keycloak admin console and assigning it to `testuser` fixes this.
 
 ## Cleanup
 Assuming you are in the root folder of the repo,

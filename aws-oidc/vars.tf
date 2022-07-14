@@ -24,3 +24,14 @@ variable client_id {
   description = "clientID of the client created by kcoidc.sh"
   default = "awsoidc"
 }
+variable group{
+  description = "The name of the keycloak group to grant access to"
+  default = "aws_access"
+}
+
+variable group2{
+  description = "The name of the keycloak group to grant access to"
+  default = "aws_access_exclusive"
+}
+
+

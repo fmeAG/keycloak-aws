@@ -1,0 +1,3 @@
+#!/bin/bash
+mkdir -p jar
+docker run --rm -v $PWD/keycloak_provider:/src -v $PWD/jar:/providers java:latest jar cvf /providers/prov.jar -C /src .

@@ -1,5 +1,5 @@
 #!/bin/bash
-GROUP_NAME="aws-saml"
+GROUP_NAME="aws_access"
 source ../kcadm.sh
 
 start

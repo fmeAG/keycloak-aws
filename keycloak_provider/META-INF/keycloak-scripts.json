@@ -1,0 +1,14 @@
+{
+    "authenticators": [
+    ],
+    "policies": [
+    ],
+    "mappers": [
+        {
+            "name": "Sub Mapper",
+            "fileName": "sub-mapper.js",
+            "description": "Stringifies groups and maps them to the sub attribute"
+        }
+    ]
+}
+

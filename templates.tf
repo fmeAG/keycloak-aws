@@ -5,6 +5,7 @@ data "template_file" "keycloak" {
     MAIL = var.mail
     POSTGRES_PASSWORD = var.postgres_password
     KEYCLOAK_PASSWORD = var.keycloak_password
+    JAR               = filebase64("jar/prov.jar")
   }
 }
 
