@@ -1,4 +1,6 @@
-# Keycloak on AWS for SAML and OIDC experiments 
+# Keycloak on AWS for SAML and OIDC experiments
+Provided by [fme AG](https://www.fme.de/dienstleistungen/technology-services/cloud-technologien/)<br/> 
+![fmeLogo.png](fmeLogo.png "fme logo")<br/><br/>
 This repo provides IaC that would deploy a keycloak server on AWS as well as scripts to set up rudimentary SAML and OIDC clients for AWS access federation.
 
 ## Compatibility
