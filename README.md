@@ -12,7 +12,7 @@ The repo has been tested to work with Keycloak 18.0.2 (which is currently distru
   - [Terraform](https://www.terraform.io/downloads)
   - [jq](https://stedolan.github.io/jq/)
   - [docker](https://docs.docker.com/engine/install/) (or an alternative tool such as [podman](https://podman.io/getting-started/)). Alternatively, you can install java and run kcadm.sh directly.
-  - The [terraform modules](https://github.com/konstl000/terraform-modules) repo cloned to `../terraform-modules`
+  - The [terraform modules](https://github.com/fmeAG/terraform-modules) repo cloned to `../terraform-modules`
 
 ## Preparing the environment
 Before the deployment is possible, a few things need to be provided first
