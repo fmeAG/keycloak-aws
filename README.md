@@ -4,7 +4,7 @@ Provided by [fme AG](https://www.fme.de/dienstleistungen/technology-services/clo
 This repo provides IaC that would deploy a keycloak server on AWS as well as scripts to set up rudimentary SAML and OIDC clients for AWS access federation.
 
 ## Compatibility
-The repo has been tested to work with Keycloak 18.0.2 (which is currently distrubuted as `quay.io/keycloak/keycloak:latest`). The `latest` tag in `user_data/keycloak.sh` can be changed to a fixed version, if later releases will break the compatibility.
+The repo has been tested to work with Keycloak 18.0.2 and Keycloak 19.0.1 (which is currently distrubuted as `quay.io/keycloak/keycloak:latest`). The `latest` tag in `user_data/keycloak.sh` can be changed to a fixed version, if later releases will break the compatibility.
 
 ## Prerequisites
   - An [AWS account](https://aws.amazon.com) and working [AWS access key and secret](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
@@ -38,6 +38,7 @@ If you feel the need, you can adjust the instance size and other parameters in t
 ```
 source ./export.sh
 ./rsa.sh
+./jar.sh
 terraform init
 terraform plan -out plan
 terraform apply plan
