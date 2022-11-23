@@ -5,7 +5,7 @@ module "instance_role" {
   service = "ec2.amazonaws.com"
 }
 resource "aws_iam_policy" "ssm_policy" {
-        name = "Session_manager_access"
+        name = "Session_manager_access_i8vQIA8"
         policy = <<EOF
 {
     "Version": "2012-10-17",
